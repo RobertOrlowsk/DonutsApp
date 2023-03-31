@@ -1,0 +1,35 @@
+<div class="container">
+
+    <div class="swiper">
+  <swiper [config]="config" (swiper)="onSwiper($event)"  #newSwiper>
+    <ng-template swiperSlide *ngFor="let images of img">
+     <img [src]="images">
+    </ng-template>
+  </swiper>
+  </div>
+
+  <span class="info">
+    Nowe Donaty już w krótce! Do każdego zamówienia powyżej 100 zł niespodzianka.
+    Darmowa wysyłka już od 99zł.
+    Sprawdź teraz!
+  </span>
+
+    <table mat-table [dataSource]="donutsData" class="mat-elevation-z8">
+      <ng-container matColumnDef="nazwa">
+        <th mat-header-cell *matHeaderCellDef> Nazwa </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="ilosc_polubien">
+        <th mat-header-cell *matHeaderCellDef> Nazwa </th>
+        <td mat-cell *matCellDef="let element"> {{element.stars}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="cena">
+        <th mat-header-cell *matHeaderCellDef> Nazwa </th>
+        <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

@@ -1,0 +1,19 @@
+.container{
+
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  height: 200px;
+
+}
+.swiper{
+  margin: .5rem;
+}
+.info{
+  text-align: center;
+  font-size: 20px;
+  font-weight: 100;
+  display: block;
+  font-family: system-ui;
+}

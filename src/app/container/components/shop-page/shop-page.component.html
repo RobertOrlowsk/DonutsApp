@@ -1,0 +1,36 @@
+<div class="container">
+ test:Zakupy!
+  <ul>
+  <li class="imagess"*ngFor="let Donuts of Donuts">
+    <a>
+     <img [src]="Donuts.imageUrl">
+
+        <div class="content">
+          <div class="name">
+            {{Donuts.name}}
+          </div>
+          <span class="favorite {{Donuts.favorite? 'gray' : ''}}">
+            	♥
+          </span>
+          <div class="stars">
+          <star-rating
+                [value]="Donuts.starts"
+                [totalstars]="5"
+                checkedcolor="purple"
+                uncheckedcolor="gray"
+                size="14px"
+                readonly="false">
+          </star-rating>
+        </div>
+          <div class="tags" *ngFor="let tags of Donuts.tags">
+            {{tags}}
+          </div>
+          <div class="price">
+            {{Donuts.price}} zł/sztuka
+          </div>
+        </div>
+    </a>
+  </li>
+  </ul>
+
+</div>
